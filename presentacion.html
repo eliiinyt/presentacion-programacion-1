@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Presentación: JavaScript — De la Interactividad Frontend a los Ecosistemas Multiplataforma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="presentacion.css">
+    <script src="presentacion.js" defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar-brand">
+            <span class="topbar-mark" aria-hidden="true">JS</span>
+            <span class="topbar-title">JavaScript: del Frontend a los Ecosistemas Multiplataforma</span>
+        </div>
+        <div class="topbar-actions">
+            <button type="button" id="btnAgenda" class="btn-chrome" title="Ir al índice (Tecla 2)">
+                Índice
+            </button>
+            <button type="button" id="btnOverview" class="btn-chrome" aria-expanded="false"
+                title="Vista general de las 16 diapositivas (Tecla G)">
+                Cuadrícula (G)
+            </button>
+            <button type="button" id="btnFullscreen" class="btn-chrome" aria-pressed="false"
+                title="Pantalla completa (Tecla F)">
+                Pantalla completa (F)
+            </button>
+        </div>
+    </header>
+
+    <main class="stage-wrapper">
+        <div id="deck" class="deck" aria-live="polite">
+
+            <!-- Diapositiva 1: Portada (Oscura estilo PPTX) -->
+            <section class="slide slide-dark cover-layout is-active" data-title="Portada institucional">
+                <div class="cover-institution">
+                    REPÚBLICA BOLIVARIANA DE VENEZUELA · UNIVERSIDAD NACIONAL EXPERIMENTAL “RAFAEL MARÍA BARALT”<br>
+                    <span class="cover-institution-sub">PROGRAMA NACIONAL DE FORMACIÓN EN INFORMÁTICA · SAN FRANCISCO,
+                        NOVIEMBRE 2026</span>
+                </div>
+
+                <div class="cover-hero">
+                    <div class="cover-rule" aria-hidden="true"></div>
+                    <h1>JavaScript: De la Interactividad Frontend a los Ecosistemas Multiplataforma</h1>
+                    <p class="cover-subtitle">Exposición técnica y demostración interactiva en el navegador</p>
+                </div>
+
+                <div class="cover-roster-box">
+                    <p class="roster-heading">Los integrantes del grupo</p>
+                    <div class="cover-roster">
+                        <div class="roster-item"><span class="roster-name">Genesis García</span><span
+                                class="roster-ci">C.I.: 20.862.430</span></div>
+                        <div class="roster-item"><span class="roster-name">Carlos Gutiérrez</span><span
+                                class="roster-ci">C.I.: 30.150.058</span></div>
+                        <div class="roster-item"><span class="roster-name">Benjamín Valbuena</span><span
+                                class="roster-ci">C.I.: 34.028.985</span></div>
+                        <div class="roster-item"><span class="roster-name">José Apalmo</span><span
+                                class="roster-ci">C.I.: 27.395.885</span></div>
+                        <div class="roster-item"><span class="roster-name">Jesús Alvarado</span><span
+                                class="roster-ci">C.I.: 31.988.710</span></div>
+                        <div class="roster-item"><span class="roster-name">Juan Gómez</span><span
+                                class="roster-ci">C.I.: 33.891.166</span></div>
+                        <div class="roster-item"><span class="roster-name">Carlos Clara</span><span
+                                class="roster-ci">C.I.: 32.934.883</span></div>
+                        <div class="roster-item"><span class="roster-name">Ing. Rixio González</span><span
+                                class="roster-ci">Programación II</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Diapositiva 2: Índice interactivo -->
+            <section class="slide" data-title="Índice de la exposición">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">Estructura general</span>
+                        <h2>Índice de la exposición</h2>
+                    </div>
+                    <span class="slide-tag">Haz clic para ir al bloque</span>
+                </div>
+                <div class="slide-body">
+                    <ul class="agenda-list">
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="2">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">01. ¿Qué es JavaScript y rol web?</span>
+                                    <span class="agenda-sub">Definición técnica, historia y Cliente-Servidor</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 3–4</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="4">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">02. Liderazgo y multiplataforma</span>
+                                    <span class="agenda-sub">Motores V8, SpiderMonkey, JavaScriptCore</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 5</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="5">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">03. Integración HTML y DOM</span>
+                                    <span class="agenda-sub">Inline, interno, externo (defer) y árbol en RAM</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 6–7</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="7">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">04. Arquitectura interna del lenguaje</span>
+                                    <span class="agenda-sub">Scope, palabras reservadas, métodos y asincronía</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 8–11</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="11">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">05. Salto al servidor</span>
+                                    <span class="agenda-sub">Entornos de ejecución Node.js y Bun</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 12</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="12">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">06. Caso práctico en vivo</span>
+                                    <span class="agenda-sub">Demostración de los 4 bloques de index.html</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 13–15</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="agenda-btn" data-goto="15">
+                                <span class="agenda-main">
+                                    <span class="agenda-title">07. Conclusiones</span>
+                                    <span class="agenda-sub">Síntesis del ecosistema web contemporáneo</span>
+                                </span>
+                                <span class="agenda-slides">Diap. 16</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Esta presentación combina teoría técnica con simuladores interactivos y los módulos reales de
+                        <code class="inline-code">index.html</code> ejecutándose en vivo.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 3: Qué es JS y evolución -->
+            <section class="slide" data-title="1. ¿Qué es JavaScript?">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">1. Fundamentos del lenguaje</span>
+                        <h2>¿Qué es JavaScript y cómo evolucionó?</h2>
+                    </div>
+                </div>
+                <div class="slide-body grid-2-wide">
+                    <div class="panel-white">
+                        <h3>Propiedades técnicas esenciales</h3>
+                        <ul class="list-clean">
+                            <li><strong>Compilación JIT:</strong> lenguaje de alto nivel interpretado y compilado en
+                                tiempo de ejecución (<em>Just-In-Time</em>) para lograr alta velocidad.</li>
+                            <li><strong>Tipado dinámico:</strong> las variables se adaptan al tipo de dato asignado en
+                                ejecución sin ataduras rígidas.</li>
+                            <li><strong>Multiparadigma:</strong> combina programación orientada a objetos, imperativa y
+                                funcional según la necesidad.</li>
+                            <li><strong>Norma ECMAScript:</strong> estándar internacional que asegura compatibilidad
+                                entre
+                                navegadores y evolución continua en seguridad y sintaxis.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panel timeline">
+                        <div class="timeline-item">
+                            <strong>1995 · Brendan Eich</strong>
+                            <p>Nace para dar dinamismo inmediato a páginas estáticas que solo mostraban texto e imágenes
+                                fijas.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Estándar ES6+</strong>
+                            <p>Incorpora alcance de bloque (<code class="inline-code">let</code> / <code
+                                    class="inline-code">const</code>), promesas y sintaxis moderna limpia.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <strong>Actualidad</strong>
+                            <p>Motor lógico universal en navegadores, servidores HTTP, móviles y escritorio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>JavaScript es independiente de Java: fue creado en 1995 para la web y hoy evoluciona bajo la
+                        especificación internacional ECMAScript.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 4: Arquitectura Cliente-Servidor -->
+            <section class="slide" data-title="1.2 Arquitectura Cliente-Servidor">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">1.2 Distribución de responsabilidades</span>
+                        <h2>Arquitectura Cliente-Servidor en la Web</h2>
+                    </div>
+                    <span class="slide-tag">Haz clic en cada tecnología</span>
+                </div>
+                <div class="slide-body">
+                    <div class="arch-columns">
+                        <div class="arch-zone-light">
+                            <div class="arch-zone-title">
+                                <span>Lado del Cliente (Navegador Web)</span>
+                                <span class="badge-info">Visible en navegador</span>
+                            </div>
+                            <div class="arch-layer-row">
+                                <button type="button" class="arch-btn is-selected" data-layer="html">
+                                    <strong>HTML</strong>
+                                    <span>Estructura y semántica</span>
+                                </button>
+                                <button type="button" class="arch-btn" data-layer="css">
+                                    <strong>CSS</strong>
+                                    <span>Presentación y diseño</span>
+                                </button>
+                                <button type="button" class="arch-btn" data-layer="js">
+                                    <strong>JavaScript</strong>
+                                    <span>Lógica e interactividad</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="arch-zone-dark">
+                            <div class="arch-zone-title">
+                                <span>Lado del Servidor (Backend)</span>
+                                <span class="badge-gold">Código privado</span>
+                            </div>
+                            <button type="button" class="arch-btn arch-btn-dark" data-layer="php">
+                                <strong>PHP + Apache / SQL</strong>
+                                <span>Procesamiento clásico oculto en el servidor</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="archInspector" class="panel-accent" role="status">
+                        <strong>HTML — Estructura y Semántica en el Cliente:</strong> Define el esqueleto del contenido
+                        (<code class="inline-code">&lt;main&gt;</code>, <code
+                            class="inline-code">&lt;section&gt;</code>,
+                        <code class="inline-code">&lt;button&gt;</code>, formularios y listas).
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>HTML, CSS y JavaScript viajan al navegador del usuario; PHP se ejecuta internamente en Apache
+                        para proteger credenciales, conectarse a SQL y devolver HTML.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 5: Liderazgo Web y Expansión Multiplataforma -->
+            <section class="slide" data-title="2. Liderazgo y Ecosistema Multiplataforma">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">2. Hegemonía y unificación tecnológica</span>
+                        <h2>¿Por qué lidera la programación web?</h2>
+                    </div>
+                </div>
+                <div class="slide-body">
+                    <div class="grid-3">
+                        <div class="engine-card">
+                            <div class="engine-name">V8</div>
+                            <div class="engine-owner">Google Chrome y Edge</div>
+                            <p>Compilación JIT directa en C++ de altísimo rendimiento; base de Node.js.</p>
+                        </div>
+                        <div class="engine-card">
+                            <div class="engine-name">SpiderMonkey</div>
+                            <div class="engine-owner">Mozilla Firefox</div>
+                            <p>Motor pionero creado en 1995 con optimización avanzada de memoria.</p>
+                        </div>
+                        <div class="engine-card">
+                            <div class="engine-name">JavaScriptCore</div>
+                            <div class="engine-owner">Apple Safari</div>
+                            <p>Arranque ultrarrápido y bajo consumo; motor utilizado también en Bun.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-4">
+                        <div class="domain-card">
+                            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="14" rx="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" />
+                            </svg>
+                            <strong>Frontend Web</strong>
+                            <p>Interfaces reactivas y validación instantánea sin recargas.</p>
+                        </div>
+                        <div class="domain-card">
+                            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="6" rx="1" />
+                                <rect x="4" y="14" width="16" height="6" rx="1" />
+                            </svg>
+                            <strong>Backend y BD</strong>
+                            <p>Servidores HTTP y acceso directo a bases de datos.</p>
+                        </div>
+                        <div class="domain-card">
+                            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="7" y="2" width="10" height="20" rx="2" />
+                                <line x1="11" y1="18" x2="13" y2="18" />
+                            </svg>
+                            <strong>Móvil Nativo</strong>
+                            <p>Aplicaciones para sistemas iOS y Android con código compartido.</p>
+                        </div>
+                        <div class="domain-card">
+                            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="13" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            <strong>Escritorio</strong>
+                            <p>Software multiplataforma reutilizando validaciones y datos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>En el servidor existen muchas opciones (PHP, Python, Java, C# o Go), pero en el navegador
+                        JavaScript es el único lenguaje ejecutado de forma nativa.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 6: Mecanismos de integración en HTML -->
+            <section class="slide" data-title="3.1 Mecanismos de integración en HTML">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">3.1 Conexión con el documento</span>
+                        <h2>Mecanismos de integración en HTML</h2>
+                    </div>
+                </div>
+                <div class="slide-body">
+                    <div class="pill-tabs" role="tablist" aria-label="Mecanismos de integración">
+                        <button type="button" class="pill-tab is-active" data-integ="inline" role="tab"
+                            aria-selected="true">1. En línea (Inline)</button>
+                        <button type="button" class="pill-tab" data-integ="interno" role="tab" aria-selected="false">2.
+                            Interno (&lt;script&gt;)</button>
+                        <button type="button" class="pill-tab" data-integ="externo" role="tab" aria-selected="false">3.
+                            Externo (.js + defer)</button>
+                    </div>
+
+                    <div class="grid-2-code">
+                        <pre class="code-block" id="integCode">&lt;<span class="tok-kw">button</span> onclick=<span class="tok-str">"alert('Hola')"</span>&gt;
+  Mostrar aviso
+&lt;/<span class="tok-kw">button</span>&gt;</pre>
+                        <div class="panel" id="integInfo">
+                            <h3>JavaScript en línea (Inline) <span class="badge-error">Desaconsejado</span></h3>
+                            <p>Incrusta instrucciones directamente dentro de atributos HTML como <code
+                                    class="inline-code">onclick</code>.</p>
+                            <p><strong>Limitación:</strong> mezcla el marcado estructural con la lógica de programación,
+                                dificultando su mantenimiento.</p>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Mecanismo</th>
+                                <th>Sintaxis de ejemplo</th>
+                                <th>Ubicación</th>
+                                <th>Recomendación técnica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. En línea</strong></td>
+                                <td><code class="inline-code">onclick="alert('Hola')"</code></td>
+                                <td>Atributo HTML</td>
+                                <td>Desaconsejado por mezclar HTML y lógica.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Interno</strong></td>
+                                <td><code class="inline-code">&lt;script&gt;...&lt;/script&gt;</code></td>
+                                <td>Antes de <code class="inline-code">&lt;/body&gt;</code></td>
+                                <td>Ideal para demos autocontenidas (<code class="inline-code">index.html</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Externo + defer</strong></td>
+                                <td><code class="inline-code">&lt;script src="app.js" defer&gt;&lt;/script&gt;</code>
+                                </td>
+                                <td>Dentro de <code class="inline-code">&lt;head&gt;</code></td>
+                                <td>Estándar profesional con descarga en segundo plano.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>El atributo <code class="inline-code">defer</code> descarga el archivo <code
+                            class="inline-code">.js</code> sin frenar el dibujo de la pantalla y espera a que el HTML
+                        esté completo antes de ejecutarlo.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 7: Modelo DOM interactivo -->
+            <section class="slide" data-title="3.2 El Modelo de Objetos del Documento (DOM)">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">3.2 Representación en memoria RAM</span>
+                        <h2>El Modelo de Objetos del Documento (DOM)</h2>
+                    </div>
+                    <span class="slide-tag">Haz clic en cualquier nodo</span>
+                </div>
+                <div class="slide-body grid-2-code">
+                    <div class="dom-tree" aria-label="Árbol jerárquico del DOM">
+                        <button type="button" class="dom-node dom-node-root is-selected" data-dom="document">document
+                            (Objeto raíz en RAM)</button>
+                        <button type="button" class="dom-node dom-node-main" data-dom="main">&lt;main&gt; (Contenedor
+                            principal)</button>
+                        <button type="button" class="dom-node dom-node-section" data-dom="section">&lt;section
+                            class="bloque"&gt;</button>
+                        <div class="dom-leaf-row">
+                            <button type="button" class="dom-node dom-node-leaf" data-dom="btnMenu">#btnMenu</button>
+                            <button type="button" class="dom-node dom-node-leaf"
+                                data-dom="listaMenu">#listaMenu</button>
+                            <button type="button" class="dom-node dom-node-leaf"
+                                data-dom="inputNombre">#inputNombre</button>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="domInspector">
+                        <h3>Nodo seleccionado: <code class="inline-code">document</code></h3>
+                        <p>Es el punto de comunicación dinámica entre JavaScript y el árbol de etiquetas en memoria.</p>
+                        <pre class="code-block code-spaced"><span class="tok-cm">// Localizar un elemento sin recargar</span>
+<span class="tok-kw">const</span> boton = document.getElementById(<span class="tok-str">"btnMenu"</span>);</pre>
+                        <p class="mt-md">Permite leer valores escritos, inyectar textos, alternar clases CSS y
+                            actualizar atributos de accesibilidad en vivo.</p>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Al leer un archivo HTML, el navegador convierte cada etiqueta en un nodo manipulable dentro de
+                        la memoria RAM sin volver a consultar al servidor.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 8: Scope y var vs let vs const -->
+            <section class="slide" data-title="4.1 Scope y var vs let vs const">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">4.1 Ciclo de vida en memoria</span>
+                        <h2>El Scope y diferencias entre var, let y const</h2>
+                    </div>
+                    <span class="slide-tag">Prueba cada declarador y nivel</span>
+                </div>
+                <div class="slide-body grid-2-wide">
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Palabra</th>
+                                    <th>Alcance</th>
+                                    <th>Reasignable</th>
+                                    <th>Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code class="inline-code">var</code></td>
+                                    <td>Función (ignora <code class="inline-code">{ }</code>)</td>
+                                    <td>Sí</td>
+                                    <td>Evitar fugas.</td>
+                                </tr>
+                                <tr>
+                                    <td><code class="inline-code">let</code></td>
+                                    <td>Bloque <code class="inline-code">{ ... }</code></td>
+                                    <td>Sí</td>
+                                    <td><code class="inline-code">contador</code>, saldo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code class="inline-code">const</code></td>
+                                    <td>Bloque <code class="inline-code">{ ... }</code></td>
+                                    <td>No</td>
+                                    <td>Por defecto / DOM.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="scope-sim-card">
+                            <div class="scope-sim-top">
+                                <span class="scope-sim-title">Simulador en bloque <code class="inline-code">if</code>:</span>
+                                <div class="pill-tabs" role="tablist" aria-label="Probar var, let o const">
+                                    <button type="button" class="pill-tab" data-decl="var" role="tab"
+                                        aria-selected="false">var</button>
+                                    <button type="button" class="pill-tab is-active" data-decl="let" role="tab"
+                                        aria-selected="true">let</button>
+                                    <button type="button" class="pill-tab" data-decl="const" role="tab"
+                                        aria-selected="false">const</button>
+                                </div>
+                            </div>
+                            <pre class="code-block" id="scopeSimCode"><span class="tok-kw">if</span> (<span class="tok-kw">true</span>) {
+  <span class="tok-kw">let</span> saldo = <span class="tok-num">500</span>;
+  saldo = <span class="tok-num">300</span>; <span class="tok-cm">// Reasignación dentro</span>
+}
+console.log(saldo); <span class="tok-cm">// Lectura fuera del if</span></pre>
+                            <div class="scope-results">
+                                <div id="scopeResInside" class="scope-result-pill is-ok">
+                                    <strong>Dentro del bloque:</strong>
+                                    Ahora vale 300 (reasignable).
+                                </div>
+                                <div id="scopeResOutside" class="scope-result-pill is-ok">
+                                    <strong>Fuera del <code class="inline-code">if</code>:</strong>
+                                    Protegida (ReferenceError).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scope-chain-panel">
+                        <h3>Cadena de Alcance: ¿desde dónde lees?</h3>
+                        <div id="scopeBoxGlobal" class="scope-box is-visible">
+                            <div class="scope-row">
+                                <button type="button" class="scope-trigger" data-scope="global">1. Scope Global</button>
+                                <span id="scopeStatusGlobal" class="scope-access">Visible</span>
+                            </div>
+                            <div class="scope-var"><code class="inline-code">let contador = 0;</code></div>
+
+                            <div id="scopeBoxFn" class="scope-box scope-box-fn is-visible">
+                                <div class="scope-row">
+                                    <button type="button" class="scope-trigger" data-scope="fn">2. Scope de Función</button>
+                                    <span id="scopeStatusFn" class="scope-access">Visible</span>
+                                </div>
+                                <div class="scope-var"><code class="inline-code">function mostrarSaludo(tipo)</code></div>
+
+                                <div id="scopeBoxBlock" class="scope-box scope-box-block is-origin">
+                                    <div class="scope-row">
+                                        <button type="button" class="scope-trigger" data-scope="block">3. Scope de Bloque { }</button>
+                                        <span id="scopeStatusBlock" class="scope-access">Leyendo aquí</span>
+                                    </div>
+                                    <div class="scope-var"><code class="inline-code">const oculto = true;</code></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="scopeChainSummary" class="panel-accent" role="status">
+                            <strong>Desde el Bloque { }:</strong> la cadena sube y accede a los 3 niveles (<code
+                                class="inline-code">oculto</code>, <code class="inline-code">tipo</code> y <code
+                                class="inline-code">contador</code>).
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span><strong>Scope Chain:</strong> JavaScript busca variables desde el bloque interno hacia
+                        afuera; con <code class="inline-code">let</code> y <code class="inline-code">const</code> nada
+                        se filtra fuera de su <code class="inline-code">{ }</code>.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 9: Palabras reservadas -->
+            <section class="slide" data-title="4.2 Palabras reservadas esenciales">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">4.2 Gramática del motor JS</span>
+                        <h2>Palabras reservadas esenciales</h2>
+                    </div>
+                </div>
+                <div class="slide-body">
+                    <div class="pill-tabs" role="tablist" aria-label="Filtrar palabras reservadas">
+                        <button type="button" class="pill-tab is-active" data-kwcat="todas">Todas (15)</button>
+                        <button type="button" class="pill-tab" data-kwcat="memoria">Memoria</button>
+                        <button type="button" class="pill-tab" data-kwcat="flujo">Flujo y Funciones</button>
+                        <button type="button" class="pill-tab" data-kwcat="async">Asincronía</button>
+                        <button type="button" class="pill-tab" data-kwcat="errores">Errores y Valores</button>
+                    </div>
+
+                    <div class="kw-grid" id="kwGrid">
+                        <div class="kw-card" data-cat="memoria"><span class="kw-name">const</span><span
+                                class="kw-cat">Memoria</span>
+                            <p class="kw-desc">Referencia fija en memoria para nodos del DOM.</p>
+                        </div>
+                        <div class="kw-card" data-cat="memoria"><span class="kw-name">let</span><span
+                                class="kw-cat">Memoria</span>
+                            <p class="kw-desc">Variable mutable de bloque para contadores o saldos.</p>
+                        </div>
+                        <div class="kw-card" data-cat="flujo"><span class="kw-name">if / else</span><span
+                                class="kw-cat">Flujo</span>
+                            <p class="kw-desc">Evalúa condiciones booleanas para bifurcar el flujo.</p>
+                        </div>
+                        <div class="kw-card" data-cat="flujo"><span class="kw-name">function</span><span
+                                class="kw-cat">Funciones</span>
+                            <p class="kw-desc">Define subrutinas reutilizables con parámetros.</p>
+                        </div>
+                        <div class="kw-card" data-cat="flujo"><span class="kw-name">return</span><span
+                                class="kw-cat">Flujo</span>
+                            <p class="kw-desc">Devuelve un dato o corta una validación fallida.</p>
+                        </div>
+                        <div class="kw-card" data-cat="async"><span class="kw-name">async</span><span
+                                class="kw-cat">Asincronía</span>
+                            <p class="kw-desc">Declara una función asíncrona sin bloquear el hilo.</p>
+                        </div>
+                        <div class="kw-card" data-cat="async"><span class="kw-name">await</span><span
+                                class="kw-cat">Asincronía</span>
+                            <p class="kw-desc">Pausa la función interna hasta resolver la promesa.</p>
+                        </div>
+                        <div class="kw-card" data-cat="async"><span class="kw-name">new</span><span
+                                class="kw-cat">Objetos</span>
+                            <p class="kw-desc">Instancia un objeto como <code class="inline-code">new Promise</code>.
+                            </p>
+                        </div>
+                        <div class="kw-card" data-cat="errores"><span class="kw-name">try / catch</span><span
+                                class="kw-cat">Errores</span>
+                            <p class="kw-desc">Captura fallos en ejecución sin detener el sistema.</p>
+                        </div>
+                        <div class="kw-card" data-cat="errores"><span class="kw-name">true / false</span><span
+                                class="kw-cat">Valores</span>
+                            <p class="kw-desc">Valores lógicos booleanos para decisiones y estados.</p>
+                        </div>
+                        <div class="kw-card" data-cat="errores"><span class="kw-name">null</span><span
+                                class="kw-cat">Valores</span>
+                            <p class="kw-desc">Ausencia intencional de valor asignada por código.</p>
+                        </div>
+                        <div class="kw-card" data-cat="errores"><span class="kw-name">undefined</span><span
+                                class="kw-cat">Valores</span>
+                            <p class="kw-desc">Variable declarada que aún no tiene ningún dato.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Las palabras reservadas forman la gramática fija del motor JavaScript y no pueden utilizarse
+                        como nombres de variables o funciones propias.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 10: Funciones, Métodos y Callbacks -->
+            <section class="slide" data-title="4.3 Funciones, Métodos y Callbacks">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">4.3 Estructura y pertenencia</span>
+                        <h2>Funciones, Métodos y Callbacks del DOM</h2>
+                    </div>
+                </div>
+                <div class="slide-body grid-2-wide">
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div class="panel">
+                            <h3>Función Autónoma</h3>
+                            <p>Bloque independiente declarado con <code class="inline-code">function</code> o flecha
+                                <code class="inline-code">() =&gt; {}</code>. Existe por sí sola.
+                            </p>
+                        </div>
+                        <div class="panel">
+                            <h3>Método de Objeto</h3>
+                            <p>Pertenece a un objeto, se invoca con punto (<code
+                                    class="inline-code">cuenta.depositar(100)</code>) y opera sus datos mediante <code
+                                    class="inline-code">this</code>.</p>
+                        </div>
+                        <div class="panel">
+                            <h3>Callback</h3>
+                            <p>Rutina pasada como argumento a otro método para diferir su ejecución, como en <code
+                                    class="inline-code">addEventListener("click", fn)</code>.</p>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Método del DOM / JS</th>
+                                <th>Función práctica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="inline-code">getElementById("id")</code></td>
+                                <td>Localiza y retorna un nodo HTML por su identificador único.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="inline-code">addEventListener(ev, fn)</code></td>
+                                <td>Escucha clics (<code class="inline-code">"click"</code>) o teclas (<code
+                                        class="inline-code">"keydown"</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><code class="inline-code">classList.toggle("clase")</code></td>
+                                <td>Agrega o quita una clase CSS devolviendo un booleano.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="inline-code">trim()</code></td>
+                                <td>Limpia espacios en blanco al inicio y final de textos.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="inline-code">setAttribute() / removeAttribute()</code></td>
+                                <td>Actualiza o retira atributos ARIA (<code class="inline-code">aria-expanded</code>,
+                                    <code class="inline-code">aria-busy</code>).
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Toda función que vive dentro de un objeto se llama método y accede a las propiedades de ese
+                        objeto mediante la palabra reservada <code class="inline-code">this</code>.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 11: Síncrono vs Asíncrono + Estados de Promesa -->
+            <section class="slide" data-title="4.4 Síncrono vs Asíncrono y Promesas">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">4.4 Modelo Single-Threaded y Event Loop</span>
+                        <h2>Funciones Síncronas vs. Asíncronas</h2>
+                    </div>
+                </div>
+                <div class="slide-body">
+                    <div class="panel-white">
+                        <h3>Simulador de hilo principal (1,5 s de espera de red)</h3>
+                        <p>Compara cómo responde la interfaz cuando una tarea bloquea el hilo frente a delegarla con
+                            <code class="inline-code">async / await</code>:
+                        </p>
+                        <div class="sim-track" aria-hidden="true">
+                            <div id="simPulse" class="sim-pulse"></div>
+                        </div>
+                        <div class="demo-fila">
+                            <button type="button" id="btnSimSync" class="btn-secondary btn-compact">Simular bloqueo
+                                síncrono</button>
+                            <button type="button" id="btnSimAsync" class="btn-primary btn-compact">Ejecutar async /
+                                await</button>
+                        </div>
+                        <p id="simStatus" class="estado" role="status">Interfaz lista y respondiendo en el hilo
+                            principal.</p>
+                    </div>
+
+                    <div class="promise-states">
+                        <div id="pPending" class="promise-card promise-card-pending is-highlighted">
+                            <strong>1. Pendiente (Pending)</strong>
+                            <p>Petición en espera sin bloquear la pantalla del usuario.</p>
+                        </div>
+                        <div id="pFulfilled" class="promise-card promise-card-fulfilled">
+                            <strong>2. Cumplida (Fulfilled)</strong>
+                            <p>Operación exitosa retomada justo después de <code class="inline-code">await</code>.</p>
+                        </div>
+                        <div id="pRejected" class="promise-card promise-card-rejected">
+                            <strong>3. Rechazada (Rejected)</strong>
+                            <p>Fallo controlado mediante bloques <code class="inline-code">try / catch</code>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>El Event Loop permite que JavaScript pause únicamente la función que espera una respuesta del
+                        servidor sin congelar el resto del navegador.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 12: Node.js y Bun -->
+            <section class="slide" data-title="5. Node.js y Bun en el servidor">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">5. Más allá del navegador</span>
+                        <h2>El salto al servidor con Node.js y Bun</h2>
+                    </div>
+                </div>
+                <p class="lead">En 2009 <strong>Ryan Dahl</strong> extrajo el motor V8 fuera del aislamiento del
+                    navegador (<em>sandbox</em>) para gobernar archivos, redes y bases de datos en el servidor.</p>
+                <div class="slide-body">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Criterio Técnico</th>
+                                <th>Node.js (2009 · Ryan Dahl)</th>
+                                <th>Bun / Bun.js (2023 · Jarred Sumner)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Naturaleza</strong></td>
+                                <td>Entorno de ejecución (<em>runtime</em>) multiplataforma fuera del navegador.</td>
+                                <td>Runtime de nueva generación compatible con proyectos Node.js.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Motor y Lenguaje Base</strong></td>
+                                <td>Motor <strong>V8</strong> de Google programado sobre <strong>C++</strong>.</td>
+                                <td>Motor <strong>JavaScriptCore</strong> (Apple) escrito desde cero en
+                                    <strong>Zig</strong>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Arquitectura y Velocidad</strong></td>
+                                <td><strong>Non-blocking I/O</strong>: miles de conexiones con poca memoria RAM.</td>
+                                <td>Tiempos de arranque hasta <strong>4 veces más rápidos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Herramientas (Tooling)</strong></td>
+                                <td>Gestor <strong>NPM</strong> (el mayor ecosistema del mundo) + utilidades externas.
+                                </td>
+                                <td>Kit <strong>Todo en Uno</strong> (<code class="inline-code">run</code>, <code
+                                        class="inline-code">install</code>, <code class="inline-code">test</code>,
+                                    empaquetador).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soporte TypeScript</strong></td>
+                                <td>Requiere configuración o transpilación en su forma clásica.</td>
+                                <td><strong>Ejecución nativa directa</strong> de archivos <code
+                                        class="inline-code">.ts</code> de fábrica.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Node.js no es un nuevo lenguaje ni un framework: es el entorno que abrió el camino a
+                        JavaScript en el backend, optimizado hoy por alternativas como Bun.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 13: Caso práctico Bloques 1 y 2 -->
+            <section class="slide" data-title="6. Caso práctico: Bloques 1 y 2">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">6. Demostración práctica (Parte I)</span>
+                        <h2>Bloques 1 y 2: Clases CSS y Scope en vivo</h2>
+                    </div>
+                    <span class="slide-tag">Prueba ambos controles</span>
+                </div>
+                <div class="slide-body grid-2">
+                    <div class="demo-box">
+                        <h3>1. Desplegar u ocultar un menú</h3>
+                        <button type="button" id="demoBtnMenu" class="btn-primary" aria-expanded="false"
+                            aria-controls="demoListaMenu">Mostrar / Ocultar Menú</button>
+                        <ul id="demoListaMenu" class="demo-menu oculto">
+                            <li>Inicio</li>
+                            <li>Transferencias</li>
+                            <li>Cerrar sesión</li>
+                        </ul>
+                        <div id="demoMenuState" class="state-strip">classList: "oculto" · aria-expanded="false"</div>
+                        <pre class="code-block code-spaced"><span class="tok-kw">const</span> oculto = listaMenu.classList.toggle(<span class="tok-str">"oculto"</span>);
+btnMenu.setAttribute(
+  <span class="tok-str">"aria-expanded"</span>,
+  String(!oculto)
+);</pre>
+                    </div>
+
+                    <div class="demo-box">
+                        <h3>2. Contador de clics (<code class="inline-code">let</code> vs <code
+                                class="inline-code">const</code>)</h3>
+                        <button type="button" id="demoBtnContador" class="btn-primary">Registrar clic</button>
+                        <p class="mt-md">Total de clics realizados: <strong id="demoTextoContador"
+                                class="cifra">0</strong></p>
+                        <div id="demoContadorState" class="state-strip">let contador = 0 (Scope externo al evento)</div>
+                        <pre class="code-block code-spaced"><span class="tok-kw">let</span> contador = <span class="tok-num">0</span>;
+btnContador.addEventListener(<span class="tok-str">"click"</span>, () =&gt; {
+  contador++;
+  textoContador.textContent = contador;
+});</pre>
+                    </div>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>En el Bloque 2 los elementos HTML se guardan con <code class="inline-code">const</code> porque
+                        nunca cambian de etiqueta, mientras <code class="inline-code">contador</code> usa <code
+                            class="inline-code">let</code> porque incrementa en cada clic.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 14: Caso práctico Bloque 3 -->
+            <section class="slide" data-title="6. Caso práctico: Bloque 3">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">6. Demostración práctica (Parte II)</span>
+                        <h2>Bloque 3: Captura de datos y teclado en vivo</h2>
+                    </div>
+                    <span class="slide-tag">Prueba vacío o con Enter</span>
+                </div>
+                <div class="slide-body grid-2-code">
+                    <div class="demo-box">
+                        <h3>3. Captura de datos y visualización</h3>
+                        <label for="demoInputNombre" class="demo-label">Nombre</label>
+                        <div class="demo-fila">
+                            <input type="text" id="demoInputNombre" class="demo-input" placeholder="Escribe tu nombre">
+                            <button type="button" id="demoBtnSaludar" class="btn-primary">Mostrar mensaje</button>
+                        </div>
+                        <p id="demoTextoSaludo" class="estado" role="status"></p>
+                        <div id="demoSaludoState" class="state-strip">data-tipo: (sin definir)</div>
+                    </div>
+
+                    <pre class="code-block"><span class="tok-kw">function</span> <span class="tok-fn">mostrarSaludo</span>(tipo, mensaje) {
+  textoSaludo.dataset.tipo = tipo;
+  textoSaludo.textContent = mensaje;
+}
+
+btnSaludar.addEventListener(<span class="tok-str">"click"</span>, () =&gt; {
+  <span class="tok-kw">const</span> nombre = inputNombre.value.trim();
+  <span class="tok-kw">if</span> (nombre === <span class="tok-str">""</span>) {
+    mostrarSaludo(<span class="tok-str">"error"</span>, <span class="tok-str">"Por favor, ingresa un nombre..."</span>);
+  } <span class="tok-kw">else</span> {
+    mostrarSaludo(<span class="tok-str">"ok"</span>, <span class="tok-str">"Hola, "</span> + nombre + <span class="tok-str">". El evento..."</span>);
+  }
+});
+
+inputNombre.addEventListener(<span class="tok-str">"keydown"</span>, (e) =&gt; {
+  <span class="tok-kw">if</span> (e.key === <span class="tok-str">"Enter"</span>) btnSaludar.click();
+});</pre>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>El atributo <code class="inline-code">dataset.tipo</code> separa la lógica del diseño:
+                        JavaScript indica el estado (<code class="inline-code">"error"</code> u <code
+                            class="inline-code">"ok"</code>) y CSS aplica el color correspondiente.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 15: Caso práctico Bloque 4 -->
+            <section class="slide" data-title="6. Caso práctico: Bloque 4 (Pago Móvil)">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">6. Demostración práctica (Parte III)</span>
+                        <h2>Bloque 4: Validación de Pago Móvil asíncrono</h2>
+                    </div>
+                    <span class="slide-tag">Simulación en vivo ($500)</span>
+                </div>
+                <div class="slide-body grid-2-code">
+                    <div class="demo-box">
+                        <h3>4. Validación de Pago Móvil</h3>
+                        <p class="demo-saldo">
+                            <span class="demo-saldo-etiqueta">Saldo disponible en cuenta</span>
+                            <span class="cifra">$<span id="demoTextoSaldo">500</span></span>
+                        </p>
+                        <label for="demoInputMonto" class="demo-label">Monto a transferir</label>
+                        <div class="demo-fila">
+                            <input type="number" id="demoInputMonto" class="demo-input" placeholder="Monto a transferir"
+                                inputmode="decimal" min="0" step="any">
+                            <button type="button" id="demoBtnTransferir" class="btn-primary">Enviar Pago Móvil</button>
+                            <button type="button" id="demoBtnResetSaldo" class="btn-secondary">Reiniciar</button>
+                        </div>
+                        <p id="demoTextoEstado" class="estado" role="status"></p>
+                        <div class="step-list" aria-label="Etapas de ejecución">
+                            <span id="stepSync" class="step-chip">1. Validación síncrona</span>
+                            <span id="stepAsync" class="step-chip">2. Espera await (1 s)</span>
+                            <span id="stepDone" class="step-chip">3. Saldo actualizado</span>
+                        </div>
+                    </div>
+
+                    <pre class="code-block">btnTransferir.addEventListener(<span class="tok-str">"click"</span>, <span class="tok-kw">async</span> () =&gt; {
+  <span class="tok-kw">const</span> monto = Number(inputMonto.value);
+  <span class="tok-kw">if</span> (monto &lt;= <span class="tok-num">0</span> || isNaN(monto)) <span class="tok-kw">return</span>;
+  <span class="tok-kw">if</span> (monto &gt; saldoDisponible) <span class="tok-kw">return</span>;
+
+  btnTransferir.disabled = <span class="tok-kw">true</span>;
+  btnTransferir.setAttribute(<span class="tok-str">"aria-busy"</span>, <span class="tok-str">"true"</span>);
+  <span class="tok-kw">await new</span> Promise(r =&gt; setTimeout(r, <span class="tok-num">1000</span>));
+
+  saldoDisponible -= monto;
+  textoSaldo.textContent = saldoDisponible;
+  btnTransferir.disabled = <span class="tok-kw">false</span>;
+  btnTransferir.removeAttribute(<span class="tok-str">"aria-busy"</span>);
+});</pre>
+                </div>
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Dato clave:</span>
+                    <span>Deshabilitar el botón durante el <code class="inline-code">await</code> evita cobros
+                        duplicados por doble clic mientras el servidor responde en segundo plano.</span>
+                </div>
+            </section>
+
+            <!-- Diapositiva 16: Conclusiones (Oscura estilo PPTX) -->
+            <section class="slide slide-dark closing-center" data-title="7. Conclusiones">
+                <div class="slide-head">
+                    <div class="slide-title-group">
+                        <span class="slide-section-label">7. Síntesis técnica</span>
+                        <h2>Conclusiones</h2>
+                    </div>
+                </div>
+                <p class="lead">JavaScript transforma documentos estáticos en aplicaciones dinámicas en el cliente y
+                    escala hacia el servidor moderno con Node.js y Bun.</p>
+
+                <div class="grid-3">
+                    <div class="panel-dark-card">
+                        <h3>Interactividad Cliente</h3>
+                        <p>Valida entradas y responde sobre el árbol DOM sin recargas innecesarias, optimizando recursos
+                            del servidor.</p>
+                    </div>
+                    <div class="panel-dark-card">
+                        <h3>Fluidez Asíncrona</h3>
+                        <p>Dominar <code class="inline-code">let</code>/<code class="inline-code">const</code>, eventos
+                            y flujos <code class="inline-code">async / await</code> evita congelar la interfaz del
+                            usuario.</p>
+                    </div>
+                    <div class="panel-dark-card">
+                        <h3>Visión Full-Stack</h3>
+                        <p>Comprender tanto el esquema clásico con <strong>PHP</strong> como <strong>Node.js</strong> y
+                            <strong>Bun</strong> aporta una formación web completa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="closing-actions">
+                    <button type="button" id="btnRestart" class="btn-chrome btn-chrome-primary">Volver a la portada</button>
+                </div>
+
+                <div class="slide-takeaway">
+                    <span class="slide-takeaway-label">Cierre:</span>
+                    <span>¡Muchas gracias por su atención! Quedamos atentos a sus preguntas y demostración en
+                        vivo.</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bottombar">
+        <button type="button" id="btnPrev" class="btn-chrome" aria-label="Diapositiva anterior">
+            ← Anterior
+        </button>
+
+        <div class="progress-group">
+            <div class="progress-track" aria-hidden="true">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <span id="slideCounter" class="slide-counter tabular">01 / 16</span>
+        </div>
+
+        <button type="button" id="btnNext" class="btn-chrome btn-chrome-primary" aria-label="Siguiente diapositiva">
+            Siguiente →
+        </button>
+    </footer>
+
+    <div id="overviewOverlay" class="overview-overlay" role="dialog" aria-modal="true" aria-labelledby="overviewTitle"
+        hidden>
+        <div class="overview-header">
+            <h2 id="overviewTitle">Todas las diapositivas (16)</h2>
+            <button type="button" id="btnCloseOverview" class="btn-chrome">Cerrar (Esc)</button>
+        </div>
+        <div id="overviewGrid" class="overview-grid"></div>
+    </div>
+</body>
+
+</html>
